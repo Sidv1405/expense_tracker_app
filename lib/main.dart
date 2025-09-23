@@ -1,9 +1,12 @@
+import 'package:expense_tracker_app/my_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      //Todo
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true),
+      home: const MyApp(),
     ),
   );
 }
