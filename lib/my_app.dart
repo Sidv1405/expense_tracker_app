@@ -1,4 +1,5 @@
 import 'package:expense_tracker_app/data/mock/expenses_mock.dart';
+import 'package:expense_tracker_app/widget/chart/chart.dart';
 import 'package:expense_tracker_app/widget/expenses_list/expenses_list.dart';
 import 'package:expense_tracker_app/widget/new_expense.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +80,7 @@ class _MyAppState extends State<MyApp> {
       ),
       body: Column(
         children: [
-          const Text('demo chart'),
+          Chart(expenses: registeredExpenses),
           Expanded(child: mainContent),
         ],
       ),
