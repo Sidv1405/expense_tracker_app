@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-# Flutter/Dart/Pub liên quan
+# Flutter/Dart/Pub
 # ----------------------------------------------------------------------------
 .dart_tool/
 .flutter-plugins
@@ -7,18 +7,27 @@
 .pub-cache/
 .pub/
 build/
-# Nếu bạn muốn người khác tự chạy build_runner thì bỏ comment dòng dưới
+
+# Ghi chú: Nếu bạn muốn team phải tự chạy build_runner thì bỏ comment dòng dưới
 # *.g.dart
 # *.freezed.dart
+# *.template.dart
 
 # ----------------------------------------------------------------------------
 # FVM (Flutter Version Management)
 # ----------------------------------------------------------------------------
-# Quan trọng: Giữ lại .fvm/fvm_config.json để định nghĩa version Flutter cho dự án
+# CHẶN thư mục chứa bộ cài SDK nặng (hàng GB)
 .fvm/flutter_sdk
+.fvm/versions/
+.fvm/release
+.fvm/version
+
+# GIỮ lại file cấu hình để mọi máy đều dùng chung version Flutter
+!.fvm/fvm_config.json
+!.fvmrc
 
 # ----------------------------------------------------------------------------
-# Android liên quan
+# Android
 # ----------------------------------------------------------------------------
 **/android/app/debug
 **/android/app/profile
@@ -30,16 +39,18 @@ local.properties
 *.jks
 *.properties
 flutter_export_environment.sh
+generated/
 
 # ----------------------------------------------------------------------------
-# iOS/macOS liên quan
+# iOS/macOS
 # ----------------------------------------------------------------------------
 **/ios/Flutter/.last_build_id
 **/ios/Pods/
 **/ios/.generated/
 .pbpodversions
 Pods/
-Podfile.lock
+# Giữ lại Podfile.lock để đồng bộ version library native
+# Podfile.lock
 DerivedData/
 *.moved-aside
 *.xcuserstate
@@ -47,7 +58,7 @@ DerivedData/
 .DS_Store
 
 # ----------------------------------------------------------------------------
-# IDE liên quan (Android Studio & VS Code)
+# IDE (Android Studio, VS Code, JetBrains)
 # ----------------------------------------------------------------------------
 .idea/
 .vscode/
@@ -55,19 +66,20 @@ DerivedData/
 *.ipr
 *.iws
 .history/
+*.sublime-project
+*.sublime-workspace
 
 # ----------------------------------------------------------------------------
-# Bảo mật & Môi trường (Secrets)
+# Secrets & Security (Tuyệt đối không push lên Git)
 # ----------------------------------------------------------------------------
 .env
 .env.*
-# Không bao giờ push key lên Git
 android/key.properties
 ios/Runner/GoogleService-Info.plist
 android/app/google-services.json
 
 # ----------------------------------------------------------------------------
-# Miscellaneous (Tạp nham)
+# Miscellaneous
 # ----------------------------------------------------------------------------
 *.log
 *.temp
