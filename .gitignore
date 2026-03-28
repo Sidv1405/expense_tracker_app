@@ -1,45 +1,77 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# ----------------------------------------------------------------------------
+# Flutter/Dart/Pub liên quan
+# ----------------------------------------------------------------------------
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
-/build/
+build/
+# Nếu bạn muốn người khác tự chạy build_runner thì bỏ comment dòng dưới
+# *.g.dart
+# *.freezed.dart
+
+# ----------------------------------------------------------------------------
+# FVM (Flutter Version Management)
+# ----------------------------------------------------------------------------
+# Quan trọng: Giữ lại .fvm/fvm_config.json để định nghĩa version Flutter cho dự án
+.fvm/flutter_sdk
+
+# ----------------------------------------------------------------------------
+# Android liên quan
+# ----------------------------------------------------------------------------
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+**/android/app/src/main/res/raw/
+.gradle/
+local.properties
+*.keystore
+*.jks
+*.properties
+flutter_export_environment.sh
+
+# ----------------------------------------------------------------------------
+# iOS/macOS liên quan
+# ----------------------------------------------------------------------------
+**/ios/Flutter/.last_build_id
+**/ios/Pods/
+**/ios/.generated/
+.pbpodversions
+Pods/
+Podfile.lock
+DerivedData/
+*.moved-aside
+*.xcuserstate
+*.xcresult
+.DS_Store
+
+# ----------------------------------------------------------------------------
+# IDE liên quan (Android Studio & VS Code)
+# ----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.history/
+
+# ----------------------------------------------------------------------------
+# Bảo mật & Môi trường (Secrets)
+# ----------------------------------------------------------------------------
+.env
+.env.*
+# Không bao giờ push key lên Git
+android/key.properties
+ios/Runner/GoogleService-Info.plist
+android/app/google-services.json
+
+# ----------------------------------------------------------------------------
+# Miscellaneous (Tạp nham)
+# ----------------------------------------------------------------------------
+*.log
+*.temp
+*.tmp
+*.swp
+doc/api/
 /coverage/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
