@@ -1,16 +1,34 @@
-# expense_tracker_app
+# 💰 Expense Tracker App
 
-A new Flutter project.
+A robust personal finance management application built with **Flutter** following **Clean Architecture** principles. This project focuses on scalability, maintainability, and high performance using a reactive local database.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🏗 Architecture
 
-A few resources to get you started if this is your first Flutter project:
+The project follows the **Clean Architecture** pattern, divided into three core layers:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* **Data Layer:** Contains Repository implementations, DataSources (Drift Database), and DTO Models.
+* **Domain Layer:** The central layer containing Business Logic, Entities, and Repository Interfaces.
+* **Presentation Layer:** User Interface (UI), reusable Widgets, and State Management using **BLoC**.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🛠 Tech Stack
+
+* **State Management:** [Flutter BLoC](https://pub.dev/packages/flutter_bloc)
+* **Database:** [Drift](https://drift.simonbinder.eu/) (SQLite) - Type-safe & Reactive.
+* **Dependency Injection:** [GetIt](https://pub.dev/packages/get_it) & [Injectable](https://pub.dev/packages/injectable).
+* **Networking:** [Dio](https://pub.dev/packages/dio) & [Retrofit](https://pub.dev/packages/retrofit).
+* **Version Management:** [FVM](https://fvm.app/) (Flutter Version Management).
+* **Navigation:** [GoRouter](https://pub.dev/packages/go_router).
+
+---
+
+## 🚀 Setup & Installation
+
+Since environment configurations and auto-generated files (`*.g.dart`) are ignored by Git to keep the codebase clean, you **must** follow these steps after cloning the repository:
+
+### 1. Install FVM (If not already installed)
+```bash
+dart pub global activate fvm
