@@ -8,23 +8,19 @@
 .pub/
 build/
 
-# Ghi chú: Nếu bạn muốn team phải tự chạy build_runner thì bỏ comment dòng dưới
-# *.g.dart
-# *.freezed.dart
-# *.template.dart
+# Chặn triệt để các file sinh ra bởi Build Runner (Drift, Retrofit, v.v.)
+*.g.dart
+*.freezed.dart
+*.template.dart
+lib/data/data_source/database/*.g.dart
 
 # ----------------------------------------------------------------------------
 # FVM (Flutter Version Management)
 # ----------------------------------------------------------------------------
-# CHẶN thư mục chứa bộ cài SDK nặng (hàng GB)
-.fvm/flutter_sdk
-.fvm/versions/
-.fvm/release
-.fvm/version
-
-# GIỮ lại file cấu hình để mọi máy đều dùng chung version Flutter
-!.fvm/fvm_config.json
-!.fvmrc
+# Chặn sạch thư mục .fvm và các file cấu hình để Tab Commit không bị đỏ
+.fvm/
+.fvmrc
+fvm_config.json
 
 # ----------------------------------------------------------------------------
 # Android
@@ -49,13 +45,15 @@ generated/
 **/ios/.generated/
 .pbpodversions
 Pods/
-# Giữ lại Podfile.lock để đồng bộ version library native
-# Podfile.lock
 DerivedData/
 *.moved-aside
 *.xcuserstate
 *.xcresult
 .DS_Store
+
+# Chặn Podfile theo ý bạn để sạch Tab Commit
+ios/Podfile
+ios/Podfile.lock
 
 # ----------------------------------------------------------------------------
 # IDE (Android Studio, VS Code, JetBrains)
@@ -70,7 +68,7 @@ DerivedData/
 *.sublime-workspace
 
 # ----------------------------------------------------------------------------
-# Secrets & Security (Tuyệt đối không push lên Git)
+# Secrets & Security
 # ----------------------------------------------------------------------------
 .env
 .env.*
